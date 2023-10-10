@@ -40,6 +40,11 @@
         <fa-icon [icon]="showPassword ? faEye : faEyeSlash"></fa-icon>
       </button>
     </div>
+    <div *ngIf="status === 'failed'">
+      <p class="font-medium text-red-500 text-xs mt-1 ml-1">
+        Failed access
+      </p>
+    </div>
     <div *ngIf="form.controls.password.touched && form.controls.password.invalid">
       <p
         *ngIf="form.controls.password.hasError('required')"
